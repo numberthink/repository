@@ -44,9 +44,9 @@ I'll skip those for now but you can always add those things later on.
 
 Now click "Make repository" and voila: the repository exists. 
 
-This should bring you to a screen that explains how to either initiate the repository from the command line or start by importing code. 
+This should bring you to a screen that explains how to either initiate the repository from the command line or start by importing code. It also gives you an HTTP URL for the repository which we'll need later on.
 
-It also gives you an HTTP URL that you can use to sync your local repository with the one on Github. We'll need that later on, but first let's make the repository _locally_. 
+I'll walk through the steps of initiating the repository from the command line, but first let's create the repository_locally_. 
 
 ## Making a local repository
 
@@ -82,7 +82,7 @@ I now have a branch ("main") with my first commit on it. But that's only on my l
 
 To do that, you have to first add the repository from Github as the "remote" origin for the one on your computer. 
 
-The command to do that is `git remote add origin` along with the URL that GitHub gave you for the repo (e.g.https://github.com/numberthink/repository.git). So for me that command ends up being: `git remote add origin https://github.com/numberthink/repository.git`.
+The command to do that is `git remote add origin` along with the URL that GitHub gave you for the repo. So for me that command ends up being: `git remote add origin https://github.com/numberthink/repository.git`.
 
 (For this part you will also need to authorize your Github account on your computer if you haven't already. You can do that with the [GitHub CLI](https://cli.github.com/manual/gh_auth_login) via the `gh auth login` command.)
 
@@ -97,7 +97,7 @@ In the future, once you make changes to your local repository, you can push them
  - `git commit -m "[commit message]"` - Commit the changes
  - `git push` - Push the committed changes to the remote repository
 
-Some other commands that are useful (God he's so commanding - We only just tied the knot, I'll work on it, I promise! Can't you see I'm committed to this?):
+Some other commands that are useful (God you're so commanding - We only just tied the knot! I'll work on it, I promise! Can't you see I'm committed to this?):
  - `git checkout -b newbranchname` - Make and checkout a new branch (can remove "-b" if it already exists)
  - `git push --set-upstream origin newbranchname` - Push to that branch on the remote repository
  - `git merge branchname` - Merge that branch into the main branch
