@@ -1,4 +1,6 @@
-# How to commit to a Git repository
+# How to commit 
+
+...to a Git repository.
 
 If you're like me and lack commitment in your life, you've come to the right place.
 
@@ -10,51 +12,57 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Git),
 
 >Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development.
 
-In other words, Git is a system that tracks changes to a set of files. It's most often used by software developers--it was originally authored by the software developer Linus Torvalds for the development of the Linux kernel--but anyone who wants to track how something changes over time can make use of it.
+So Git is a system that tracks changes to any sets of computer files. 
+
+But why would you need that?
 
 ## Why use Git?
 
-Among the benefits of using Git is the fact that every change you make to a repository is snapshotted and stored forever (for as long as you both shall live).
+Take the example of software engineering, what Git was originally made for when it was authored by software developer Linus Torvalds for the development of the Linux kernel.
 
-If your repository strays from the right path--or you just make an accidental or unwanted change to it--it's easy to restore an older version and get back to the way things were.
+In software engineering, version control is paramount: you need to be able to rollback to previous versions of software if something goes wrong after a change. By tracking and saving each of the committed changes to a set of files, Git allows you to easily revert to a previous version when disaster strikes.
 
-Another upside is that when you update a project, even if you restart completely from scratch, you don't have to worry about re-naming it (and ending up with a file called "Final-_Final_-REALLY-FINAL6.doc"). You can start fresh as many times as you want knowing the older versions are forever accessible in the Git history if you need them. Every day can be day one. 
+But just because Git was created with software development in mind doesn't mean it's not useful for other types of projects. Anyone who has a file, or a set files, they want to track over time can benefit from Git. A single Microsoft Word file, or a collection of blog posts, or even just a folder of your photos, are all great things to track with Git.
 
-Git also forces you into the making updates in the "unit" of commits. This is helpful for me--and anyone else who might have commitment issues--because you can see everyday exactly what was committed to a repository. You can commit to making regular commits and have instant feedback on how strong your commitment really is. 
+Among the benefits of using Git is that every change made to a repository--what the set of files being tracked is called--is snapshotted and stored forever. It's like a time machine that can transport your project back to any point in time. 
+
+Another upside is that when you update a project, even if you restart completely from scratch, you don't have to worry about re-naming it (and ending up with a file called "Final-Final-REALLY-FINAL6.doc"). You can start fresh as many times as you want knowing the older versions are forever accessible in the Git history if you need them. Every day can be day one.
+
+Git also forces you into the making updates in the "unit" of commits. This is helpful for me--and anyone else who might have commitment issues--because you can see everyday exactly what was committed to a repository. You can commit to making regular commits and have instant feedback on how strong your commitment really is.
 
 If nothing is committed, what are you even doing? Twiddling your thumbs? Well then follow me and let's make a commit(ment) together.
 
 ## Making a repository
 
-To start using Git, I'm going to make an account on Github, a popular place to manage Git repositories. 
+To start using Git, you can make an account on [GitHub](https://github.com), a popular place to manage Git repositories. (However, GitHub is not the only application for storing and managing Git repositories.)
 
-(However, Github is not the only application for storing and managing Git repositories.)
+Once you have a Github account and are logged in, there should be a big green button that says "New" next to your repositories.
 
-Once you have a Github account and are logged in, there should be a big green button that says "New" next to your repositories. 
+Click it.
 
-Click it. 
+You should be taken to a page where you enter the name of your repository and decide if it's public or private.
 
-You should be taken to a page where you enter the name of your repository and decide if it's public or private. 
+For the name, I'll pick something boring like "repository". I'll make it public since public commitments can be easier to hold yourself to.
 
-For the name, I'll pick something boring like "repository". I'll make it public since public commitments can be easier to hold yourself to. 
+There are also some options on this page for adding a "License", which tells others how they can use your code, and a "README", a summary of what the repository does. These are common, especially in software, but by no means necessary.
 
-There are also some options on this page for adding a License, which tells others how they can use your code, and a README, a summary of what the repository does.
+I'll skip those for now but you can always add those things later on.
 
-I'll skip those for now but you can always add those things later on. 
-
-Now click "Make repository" and voila: the repository exists. 
+Now click "Make repository" and voilá: the repository exists.
 
 This should bring you to a screen that explains how to either initiate the repository from the command line or start by importing code. It also gives you an HTTP URL for the repository which we'll need later on.
 
-I'll walk through the steps of initiating the repository from the command line, but first let's create the repository_locally_. 
+If you want, you can just follow those instructions and skip the rest of this article.
+
+Or you can keep reading and I'll walk you through each of the steps, starting with creating the repository locally.
 
 ## Making a local repository
 
 The "local" repository is the repository on your computer (which will be synced with the one on Github). 
 
-To start it, go to the _root_ folder of the repository on your computer. "Root" just means the starting folder that everything else is inside of, I guess because plants and trees (a common metaphor with Git) always start at the root. Inside the root folder you might have a README, License, configuration files, and then sub-folders where the actual code--or text or other content--lives. 
+To start it, go to the root folder of the repository on your computer. "Root" just means the starting folder that everything else is inside of (I guess because trees, a common metaphor with Git, always start at the root). Inside the root folder you could have a README, License, configuration files, and then sub-folders where the actual code--or text or other content--lives.
 
-If you already have a folder or file that you want to use as the starting point, you can start there. Otherwise you can just make an empty new project folder. 
+If you already have a folder or file that you want to use as the starting point, you can start there. Otherwise you can just make an empty new project folder.e that you want to use as the starting point, you can start there. Otherwise you can just make an empty new project folder. 
 
 This next part requires a command line interface. For that, I use the "Terminal" app on my Mac (which might be called something like "Command Prompt" on Windows).
 
@@ -97,11 +105,11 @@ In the future, once you make changes to your local repository, you can push them
  - `git commit -m "[commit message]"` - Commit the changes
  - `git push` - Push the committed changes to the remote repository
 
-Some other commands that are useful (God you're so commanding - We only just tied the knot! I'll work on it, I promise! Can't you see I'm committed to this?):
+Some other commands that are useful (I know I seem commanding but I'm working on it, I promise!):
  - `git checkout -b newbranchname` - Make and checkout a new branch (can remove "-b" if it already exists)
  - `git push --set-upstream origin newbranchname` - Push to that branch on the remote repository
  - `git merge branchname` - Merge that branch into the main branch
 
 You can find more commands and resources [here](https://docs.github.com/en/get-started/using-git/about-git).
 
-Remember: commitment is forever (unless you get a divorce, I mean delete the repository).
+Remember: commitment is forever (unless you get a divorce...I mean delete the repository).
